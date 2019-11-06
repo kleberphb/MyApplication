@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorYelow"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_faculdade" />
+
+    <EditText
+        android:id="@+id/antena_01"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/fundo_botao_blue"
+        android:gravity="center"
+        android:hint="@string/altura_a"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:singleLine="true" />
+
+    <EditText
+        android:id="@+id/antena_02"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/fundo_botao_blue"
+        android:gravity="center"
+        android:hint="@string/altura_b"
+        android:inputType="numberDecimal"
+        android:padding="10dp"
+        android:singleLine="true" />
+
+   <!-- <Button
+        android:id="@+id/acao"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/resultado"
+        android:textColor="@android:color/background_light" />-->
+
+    <TextView
+        android:id="@+id/questao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/fundo_botao"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Implementar um algoritmo que determine a linha de visada, isto é, que faça uma estimação do alcance de sinal em VHF (Very High Frequency) entre duas antenas, \nconforme a fórmula : d = sqrt(12.7 * A).  \nOnde A corresponde à altura da antena e d corresponde ao alcance da antena.  \nObs.: A linha de visada é dada pela soma dos alcances individuais de cada antena."
+        android:textColor="@color/colorBlack"
+        android:textSize="10sp"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/distancia1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/distancia2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/visada"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/colorBlack"
+        tools:visibility="gone" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/cl_vis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/images" />
+
+        <TextView
+            android:id="@+id/tv_visada"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="48dp"
+            android:background="@android:color/holo_orange_light"
+            android:gravity="center"
+            android:text="Visada=34,987km"
+            android:textColor="@android:color/black"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_dist_01"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="75dp"
+            android:gravity="center"
+            android:text="d=3.456km"
+            android:textColor="@android:color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_dist_02"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginEnd="55dp"
+            android:gravity="center"
+            android:text="d=4.567km"
+            android:textColor="@android:color/black"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/duvida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:srcCompat="@drawable/vem_portugal_doubt705"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/resposta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/fundo_botao"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Implementar um algoritmo que determine a linha de visada, isto é, que faça uma estimação do alcance de sinal em VHF (Very High Frequency) entre duas antenas, \nconforme a fórmula : d = sqrt(12.7 * A).  \nOnde A corresponde à altura da antena e d corresponde ao alcance da antena.  \nObs.: A linha de visada é dada pela soma dos alcances individuais de cada antena."
+        android:textColor="@color/colorBlack"
+        android:textSize="10sp"
+        tools:visibility="gone" />
+
+</LinearLayout>
